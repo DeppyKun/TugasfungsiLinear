@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KALKULUS FUNGSI LINEAR</title>
+    <link rel="stylesheet" href="Grafik.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://www.desmos.com/api/v1.6/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+    
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+          <nav>
+              <ul id="listmenu">
+                  <li><a href="nav.html">Beranda</a></li>
+                  <li><a href="Grafik.html">Kalkulator</a></li>
+                  <li><a href="tentang.html">About</a></li>
+                  <li><a href="tolong.html">Help</a></li>
+              </ul>
+          </nav>
+
+      </div>
+  </div>
+      
+        <div class="sidebar">
+          <div class="top">
+            <div class="logo">
+                <span>Fungsi Linear</span>
+            </div>
+            <i class='bx bx-menu' id="btn"></i>
+          </div>
+
+        <ul>
+            <li>
+                <a href="nav.html">
+                    <i class="bx bx-home"></i>
+                    <span class="nav-item">Beranda</span>
+                </a>
+                <span class="tooltip">Beranda</span>
+            </li>
+
+            <li>
+                <a href="Grafik.html">
+                    <i class="bx bx-calculator"></i>
+                    <span class="nav-item">Kalkulator</span>
+                </a>
+                <span class="tooltip">Kalkulator</span>
+            </li>
+
+            <li>
+                <a href="tentang.html">
+                    <i class="bx bx-group"></i>
+                    <span class="nav-item">About</span>
+                </a>
+                <span class="tooltip">About</span>
+            </li>
+
+            <li>
+                <a href="tolong.html">
+                    <i class="bx bx-help-circle"></i>
+                    <span class="nav-item">Help</span>
+                </a>
+                <span class="tooltip">Help</span>
+            </li>
+
+        </ul>
+      
+        </div>
+      
+      <div class="content">
+        
+        <h2>Kalkulator Fungsi Linear</h2>
+        <h3>Bentuk Umum Fungsi Linear f(x) = ax + b</h3>
+        <div class="input">
+        <p>Masukan Nilai a</p>
+        <label for="nilaia"></label>
+        <input type="number" id="nilaia" placeholder="Masukan Nilai a"  /><br />
+        <p>Masukan Nilai b</p>
+        <label for="nilaib"></label>
+        <input type="number" id="nilaib" placeholder="Masukan Nilai b"  /><br /><br />
+        </div>
+
+        <button onclick='hitungFungsiLinear()'' ,id="klik" >
+          Hitung Grafik
+        </button>
+        <div id="calculator" style="width: auto; height: 400px"></div>
+      </div>
+      <script>
+        // Fungsi untuk menghitung dan menampilkan grafik fungsi linear
+
+        // Inisialisasi kalkulator Desmos
+        var elt = document.getElementById("calculator");
+        var calculator = Desmos.Calculator(elt);
+        var a = 0;
+
+        function hitungFungsiLinear() {
+          // Dapatkan nilai a dan b dari input
+          var a = parseFloat(document.getElementById("nilaia").value);
+          var b = parseFloat(document.getElementById("nilaib").value);
+          
+          // Buat ekspresi linear
+          var expression = `y = ${a}x + ${b}`;
+
+          // Atur ekspresi ke kalkulator Desmos
+          calculator.setExpression({ id: `graph ${a}`, latex: expression });
+          a += 1;
+        }
+        </script>
+
+        <script>
+        let btn = document.querySelector('#btn');
+        let sidebar = document.querySelector('.sidebar');
+
+        btn.onclick = function () {
+          sidebar.classList.toggle('active');
+        }
+        </script>
+    
+    </body>
+  
+</html>
