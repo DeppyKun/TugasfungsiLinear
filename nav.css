@@ -5,7 +5,9 @@
 }
 
 body {
-    background-color: #161B22
+    background: linear-gradient(to bottom, #161B22, rgb(20, 15, 43));
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 .container {

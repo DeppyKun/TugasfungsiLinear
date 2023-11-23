@@ -5,7 +5,9 @@
 }
 
 body {
-  background-color: #161B22
+  background: linear-gradient(to bottom, #161B22, rgb(20, 15, 43));
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .container {
@@ -171,7 +173,7 @@ nav ul li a:hover {
   position: absolute;
   min-height: 100vh;
   top: 0;
-  z-index: 0;
+  z-index: -1;
   left: 100px;
   transition: all 0.5s ease;
   width: calc(100% - 80px);
